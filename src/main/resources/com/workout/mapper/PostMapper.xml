@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workout.mapper.PostMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO post (content, member_id)
+        VALUES (#{content}, #{memberId})
+    </insert>
+
+    <select id="findAll" resultType="Post">
+        SELECT *
+        FROM post
+    </select>
+
+    <select id="findById" resultType="Post">
+        SELECT *
+        FROM post
+        WHERE id = #{id}
+    </select>
+
+    <update id="update">
+        UPDATE post
+        SET content = #{updateParam.content}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM post
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

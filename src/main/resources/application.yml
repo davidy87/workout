@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    schema: schema.sql
+
+# MyBatis
+mybatis:
+  type-aliases-package: com.workout.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      workout: trace
