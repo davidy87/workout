@@ -23,6 +23,10 @@ public class PostRepository {
         return postMapper.findAll();
     }
 
+    public List<Post> findAllByMemberId(Long memberId) {
+        return postMapper.findAllByMemberId(memberId);
+    }
+
     public Optional<Post> findById(Long id) {
         return postMapper.findById(id);
     }

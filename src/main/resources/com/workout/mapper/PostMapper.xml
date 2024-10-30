@@ -12,6 +12,12 @@
         FROM post
     </select>
 
+    <select id="findAllByMemberId" resultType="Post">
+        SELECT *
+        FROM post
+        WHERE member_id = #{memberId}
+    </select>
+
     <select id="findById" resultType="Post">
         SELECT *
         FROM post

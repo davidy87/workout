@@ -77,6 +77,28 @@ class PostRepositoryTest {
     }
 
     @Test
+    @DisplayName("Post memberId별 전체 조회 테스트")
+    void findAllByMemberId() {
+        // given
+        int size = 5;
+
+        for (int i = 1; i <= size; i++) {
+            Post post = Post.builder()
+                    .content("content " + i)
+                    .memberId(member.getId())
+                    .build();
+
+            postRepository.save(post);
+        }
+
+        // when
+        List<Post> found = postRepository.findAllByMemberId(member.getId());
+
+        // then
+        assertThat(found).hasSize(size);
+    }
+
+    @Test
     @DisplayName("Post id별 조회 테스트")
     void findById() {
         // given
