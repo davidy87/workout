@@ -1,7 +1,8 @@
 package com.workout.repository;
 
-import com.workout.model.member.Member;
-import com.workout.model.member.MemberUpdateParam;
+import com.workout.domain.member.model.Member;
+import com.workout.domain.member.model.MemberUpdateParam;
+import com.workout.domain.member.repository.MemberRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

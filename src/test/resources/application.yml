@@ -1,6 +1,6 @@
 # MyBatis
 mybatis:
-  type-aliases-package: com.workout.model
+  type-aliases-package: com.workout.domain
   configuration:
     map-underscore-to-camel-case: true
 

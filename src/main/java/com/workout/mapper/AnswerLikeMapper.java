@@ -1,6 +1,6 @@
 package com.workout.mapper;
 
-import com.workout.model.answerlike.AnswerLike;
+import com.workout.domain.answerlike.model.AnswerLike;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
