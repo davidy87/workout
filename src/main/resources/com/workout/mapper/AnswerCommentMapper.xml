@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workout.mapper.AnswerCommentMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO answer_comment (content, answer_id, member_id)
+        VALUES (#{content}, #{answerId}, #{memberId})
+    </insert>
+
+    <select id="findAllByAnswerId" resultType="AnswerComment">
+        SELECT *
+        FROM answer_comment
+        WHERE answer_id = #{answerId}
+    </select>
+
+    <select id="findAllByMemberId" resultType="AnswerComment">
+        SELECT *
+        FROM answer_comment
+        WHERE member_id = #{memberId}
+    </select>
+
+    <update id="update">
+        UPDATE answer_comment
+        SET content = #{updateParam.content}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM answer_comment
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
