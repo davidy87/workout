@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workout.mapper.AnswerLikeMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO answer_like (answer_id, member_id)
+        VALUES (#{answerId}, #{memberId})
+    </insert>
+
+    <select id="findAllByAnswerId" resultType="AnswerLike">
+        SELECT *
+        FROM answer_like
+        WHERE answer_id = #{answerId}
+    </select>
+
+    <delete id="delete">
+        DELETE FROM answer_like
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

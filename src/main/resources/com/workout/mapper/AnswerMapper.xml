@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.workout.mapper.AnswerMapper">
+
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO answer (content, question_id, member_id)
+        VALUES (#{content}, #{questionId}, #{memberId})
+    </insert>
+
+    <select id="findAll" resultType="Answer">
+        SELECT *
+        FROM answer
+    </select>
+
+    <select id="findAllByQuestionId" resultType="Answer">
+        SELECT *
+        FROM answer
+        WHERE question_id = #{questionId}
+    </select>
+
+    <select id="findAllByMemberId" resultType="Answer">
+        SELECT *
+        FROM answer
+        WHERE member_id = #{memberId}
+    </select>
+
+    <select id="findById" resultType="Answer">
+        SELECT *
+        FROM answer
+        WHERE id = #{id}
+    </select>
+
+    <update id="update">
+        UPDATE answer
+        SET content = #{updateParam.content}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM answer
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
