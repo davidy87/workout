@@ -1,10 +1,14 @@
 package com.workout.repository;
 
-import com.workout.model.answer.Answer;
-import com.workout.model.answercomment.AnswerComment;
-import com.workout.model.answercomment.AnswerCommentUpdateParam;
-import com.workout.model.member.Member;
-import com.workout.model.question.Question;
+import com.workout.domain.answer.model.Answer;
+import com.workout.domain.answer.repository.AnswerRepository;
+import com.workout.domain.answercomment.repository.AnswerCommentRepository;
+import com.workout.domain.answercomment.model.AnswerComment;
+import com.workout.domain.answercomment.model.AnswerCommentUpdateParam;
+import com.workout.domain.member.model.Member;
+import com.workout.domain.member.repository.MemberRepository;
+import com.workout.domain.question.model.Question;
+import com.workout.domain.question.repository.QuestionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

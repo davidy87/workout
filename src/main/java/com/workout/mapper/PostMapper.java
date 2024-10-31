@@ -1,7 +1,7 @@
 package com.workout.mapper;
 
-import com.workout.model.post.Post;
-import com.workout.model.post.PostUpdateParam;
+import com.workout.domain.post.model.Post;
+import com.workout.domain.post.model.PostUpdateParam;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

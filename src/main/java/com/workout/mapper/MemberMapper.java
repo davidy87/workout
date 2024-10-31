@@ -1,7 +1,7 @@
 package com.workout.mapper;
 
-import com.workout.model.member.Member;
-import com.workout.model.member.MemberUpdateParam;
+import com.workout.domain.member.model.Member;
+import com.workout.domain.member.model.MemberUpdateParam;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
