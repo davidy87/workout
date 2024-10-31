@@ -1,6 +1,6 @@
 package com.workout.mapper;
 
-import com.workout.model.post_like.PostLike;
+import com.workout.model.postlike.PostLike;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

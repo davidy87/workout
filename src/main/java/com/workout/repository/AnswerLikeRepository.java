@@ -1,7 +1,7 @@
 package com.workout.repository;
 
 import com.workout.mapper.AnswerLikeMapper;
-import com.workout.model.answer_like.AnswerLike;
+import com.workout.model.answerlike.AnswerLike;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

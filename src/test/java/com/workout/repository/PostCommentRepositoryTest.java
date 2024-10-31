@@ -2,8 +2,8 @@ package com.workout.repository;
 
 import com.workout.model.member.Member;
 import com.workout.model.post.Post;
-import com.workout.model.post_comment.PostComment;
-import com.workout.model.post_comment.PostCommentUpdateParam;
+import com.workout.model.postcomment.PostComment;
+import com.workout.model.postcomment.PostCommentUpdateParam;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

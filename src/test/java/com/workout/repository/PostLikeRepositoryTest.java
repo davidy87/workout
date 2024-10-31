@@ -2,7 +2,7 @@ package com.workout.repository;
 
 import com.workout.model.member.Member;
 import com.workout.model.post.Post;
-import com.workout.model.post_like.PostLike;
+import com.workout.model.postlike.PostLike;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

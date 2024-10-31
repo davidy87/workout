@@ -1,8 +1,8 @@
 package com.workout.repository;
 
 import com.workout.model.answer.Answer;
-import com.workout.model.answer_comment.AnswerComment;
-import com.workout.model.answer_comment.AnswerCommentUpdateParam;
+import com.workout.model.answercomment.AnswerComment;
+import com.workout.model.answercomment.AnswerCommentUpdateParam;
 import com.workout.model.member.Member;
 import com.workout.model.question.Question;
 import org.junit.jupiter.api.BeforeEach;

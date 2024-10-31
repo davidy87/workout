@@ -1,4 +1,4 @@
-package com.workout.model.post_comment;
+package com.workout.model.postcomment;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

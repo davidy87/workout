@@ -1,13 +1,15 @@
-package com.workout.model.answer_like;
+package com.workout.model.answercomment;
 
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 @Builder
-public class AnswerLike {
+public class AnswerComment {
 
     private Long id;
+
+    private String content;
 
     private Long answerId;
 

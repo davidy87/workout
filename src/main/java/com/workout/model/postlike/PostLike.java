@@ -1,15 +1,13 @@
-package com.workout.model.post_comment;
+package com.workout.model.postlike;
 
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
 @Builder
-public class PostComment {
+public class PostLike {
 
     private Long id;
-
-    private String content;
 
     private Long postId;
 

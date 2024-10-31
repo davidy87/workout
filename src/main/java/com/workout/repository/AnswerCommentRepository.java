@@ -1,8 +1,8 @@
 package com.workout.repository;
 
 import com.workout.mapper.AnswerCommentMapper;
-import com.workout.model.answer_comment.AnswerComment;
-import com.workout.model.answer_comment.AnswerCommentUpdateParam;
+import com.workout.model.answercomment.AnswerComment;
+import com.workout.model.answercomment.AnswerCommentUpdateParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

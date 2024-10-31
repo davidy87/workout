@@ -1,8 +1,8 @@
 package com.workout.repository;
 
 import com.workout.mapper.PostCommentMapper;
-import com.workout.model.post_comment.PostComment;
-import com.workout.model.post_comment.PostCommentUpdateParam;
+import com.workout.model.postcomment.PostComment;
+import com.workout.model.postcomment.PostCommentUpdateParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

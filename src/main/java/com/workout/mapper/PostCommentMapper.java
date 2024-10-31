@@ -1,7 +1,7 @@
 package com.workout.mapper;
 
-import com.workout.model.post_comment.PostComment;
-import com.workout.model.post_comment.PostCommentUpdateParam;
+import com.workout.model.postcomment.PostComment;
+import com.workout.model.postcomment.PostCommentUpdateParam;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

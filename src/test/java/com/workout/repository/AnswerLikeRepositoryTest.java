@@ -1,7 +1,7 @@
 package com.workout.repository;
 
 import com.workout.model.answer.Answer;
-import com.workout.model.answer_like.AnswerLike;
+import com.workout.model.answerlike.AnswerLike;
 import com.workout.model.member.Member;
 import com.workout.model.question.Question;
 import org.junit.jupiter.api.BeforeEach;

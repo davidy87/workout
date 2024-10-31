@@ -1,7 +1,7 @@
 package com.workout.mapper;
 
-import com.workout.model.answer_comment.AnswerComment;
-import com.workout.model.answer_comment.AnswerCommentUpdateParam;
+import com.workout.model.answercomment.AnswerComment;
+import com.workout.model.answercomment.AnswerCommentUpdateParam;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
