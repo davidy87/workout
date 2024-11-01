@@ -31,6 +31,11 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
     @Override
+    public Optional<Member> findByEmail(String email) {
+        return memberMapper.findByEmail(email);
+    }
+
+    @Override
     public boolean existByEmail(String email) {
         return memberMapper.existByEmail(email) != 0;
     }
