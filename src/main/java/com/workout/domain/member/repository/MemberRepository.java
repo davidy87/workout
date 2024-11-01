@@ -14,9 +14,9 @@ public interface MemberRepository {
 
     Optional<Member> findById(Long id);
 
-    int existByEmail(String email);
+    boolean existByEmail(String email);
 
-    int existByUsername(String username);
+    boolean existByUsername(String username);
 
     void update(Long id, MemberUpdateParam updateParam);
 

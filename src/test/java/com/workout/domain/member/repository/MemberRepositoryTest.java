@@ -81,10 +81,11 @@ class MemberRepositoryTest {
         memberRepository.save(member);
 
         // when
-        int count = memberRepository.existByEmail(member.getEmail());
+        boolean result = memberRepository.existByEmail(member.getEmail());
 
         // then
-        assertThat(count).isEqualTo(1);
+        assertThat(result).isTrue();
+
     }
 
     @Test
@@ -101,10 +102,10 @@ class MemberRepositoryTest {
         memberRepository.save(member);
 
         // when
-        int count = memberRepository.existByUsername(member.getUsername());
+        boolean result = memberRepository.existByUsername(member.getUsername());
 
         // then
-        assertThat(count).isEqualTo(1);
+        assertThat(result).isTrue();
     }
 
     @Test

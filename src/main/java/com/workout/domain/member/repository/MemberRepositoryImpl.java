@@ -31,13 +31,13 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
     @Override
-    public int existByEmail(String email) {
-        return memberMapper.existByEmail(email);
+    public boolean existByEmail(String email) {
+        return memberMapper.existByEmail(email) != 0;
     }
 
     @Override
-    public int existByUsername(String username) {
-        return memberMapper.existByUsername(username);
+    public boolean existByUsername(String username) {
+        return memberMapper.existByUsername(username) != 0;
     }
 
     @Override
