@@ -69,6 +69,46 @@ class MemberRepositoryTest {
     }
 
     @Test
+    @DisplayName("email로 Member 존재 여부 확인 테스트")
+    void existByEmail() {
+        // given
+        Member member = Member.builder()
+                .email("user@gmail.com")
+                .username("user")
+                .password("testpass!")
+                .profileImage("user.png")
+                .build();
+
+        memberRepository.save(member);
+
+        // when
+        int count = memberRepository.existByEmail(member.getEmail());
+
+        // then
+        assertThat(count).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("username으로 Member 존재 여부 확인 테스트")
+    void existByUsername() {
+        // given
+        Member member = Member.builder()
+                .email("user@gmail.com")
+                .username("user")
+                .password("testpass!")
+                .profileImage("user.png")
+                .build();
+
+        memberRepository.save(member);
+
+        // when
+        int count = memberRepository.existByUsername(member.getUsername());
+
+        // then
+        assertThat(count).isEqualTo(1);
+    }
+
+    @Test
     @DisplayName("Member 수정 테스트")
     void update() {
         // given

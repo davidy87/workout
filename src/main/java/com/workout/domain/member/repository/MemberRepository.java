@@ -27,6 +27,14 @@ public class MemberRepository  {
         return memberMapper.findById(id);
     }
 
+    public int existByEmail(String email) {
+        return memberMapper.existByEmail(email);
+    }
+
+    public int existByUsername(String username) {
+        return memberMapper.existByUsername(username);
+    }
+
     public void update(Long id, MemberUpdateParam updateParam) {
         memberMapper.update(id, updateParam);
     }

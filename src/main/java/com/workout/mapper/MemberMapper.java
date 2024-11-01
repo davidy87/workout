@@ -7,5 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface MemberMapper extends CrudMapper<Member> {
 
+    int existByEmail(String email);
+
+    int existByUsername(String username);
+
     void update(Long id, MemberUpdateParam updateParam);
 }
