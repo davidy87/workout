@@ -1,8 +1,7 @@
-package com.workout.repository;
+package com.workout.domain.answercomment.repository;
 
 import com.workout.domain.answer.model.Answer;
 import com.workout.domain.answer.repository.AnswerRepository;
-import com.workout.domain.answercomment.repository.AnswerCommentRepository;
 import com.workout.domain.answercomment.model.AnswerComment;
 import com.workout.domain.answercomment.model.AnswerCommentUpdateParam;
 import com.workout.domain.member.model.Member;

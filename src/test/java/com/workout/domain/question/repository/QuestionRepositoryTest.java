@@ -1,10 +1,9 @@
-package com.workout.repository;
+package com.workout.domain.question.repository;
 
 import com.workout.domain.member.model.Member;
 import com.workout.domain.member.repository.MemberRepository;
 import com.workout.domain.question.model.Question;
 import com.workout.domain.question.model.QuestionUpdateParam;
-import com.workout.domain.question.repository.QuestionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

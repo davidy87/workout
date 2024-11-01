@@ -1,31 +1,16 @@
 package com.workout.domain.postlike.repository;
 
-import com.workout.mapper.PostLikeMapper;
 import com.workout.domain.postlike.model.PostLike;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@RequiredArgsConstructor
-@Repository
-public class PostLikeRepository {
+public interface PostLikeRepository {
 
-    private final PostLikeMapper postLikeMapper;
+    void save(PostLike postLike);
 
-    public void save(PostLike postLike) {
-        postLikeMapper.save(postLike);
-    }
+    List<PostLike> findByPostId(Long postId);
 
-    public List<PostLike> findByPostId(Long postId) {
-        return postLikeMapper.findAllByPostId(postId);
-    }
+    List<PostLike> findByMemberId(Long memberId);
 
-    public List<PostLike> findByMemberId(Long memberId) {
-        return postLikeMapper.findAllByMemberId(memberId);
-    }
-
-    public void delete(Long id) {
-        postLikeMapper.delete(id);
-    }
+    void delete(Long id);
 }

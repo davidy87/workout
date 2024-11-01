@@ -1,36 +1,19 @@
 package com.workout.domain.answer.repository;
 
-import com.workout.mapper.AnswerMapper;
 import com.workout.domain.answer.model.Answer;
 import com.workout.domain.answer.model.AnswerUpdateParam;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@RequiredArgsConstructor
-@Repository
-public class AnswerRepository {
+public interface AnswerRepository {
 
-    private final AnswerMapper answerMapper;
+    void save(Answer answer);
 
-    public void save(Answer answer) {
-        answerMapper.save(answer);
-    }
+    List<Answer> findAllByQuestionId(Long questionId);
 
-    public List<Answer> findAllByQuestionId(Long questionId) {
-        return answerMapper.findAllByQuestionId(questionId);
-    }
+    List<Answer> findAllByMemberId(Long memberId);
 
-    public List<Answer> findAllByMemberId(Long memberId) {
-        return answerMapper.findAllByMemberId(memberId);
-    }
+    void update(Long id, AnswerUpdateParam updateParam);
 
-    public void update(Long id, AnswerUpdateParam updateParam) {
-        answerMapper.update(id, updateParam);
-    }
-
-    public void delete(Long id) {
-        answerMapper.delete(id);
-    }
+    void delete(Long id);
 }
