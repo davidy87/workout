@@ -68,6 +68,30 @@ class MemberRepositoryTest {
     }
 
     @Test
+    @DisplayName("email별 Member 조회 테스트")
+    void findByEmail() {
+        // given
+        Member member = Member.builder()
+                .email("user@gmail.com")
+                .username("user")
+                .password("testpass!")
+                .profileImage("user.png")
+                .build();
+
+        memberRepository.save(member);
+
+        // when
+        Optional<Member> found = memberRepository.findByEmail(member.getEmail());
+
+        // then
+        assertThat(found).isNotEmpty();
+        assertThat(found.get().getEmail()).isEqualTo(member.getEmail());
+        assertThat(found.get().getUsername()).isEqualTo(member.getUsername());
+        assertThat(found.get().getPassword()).isEqualTo(member.getPassword());
+        assertThat(found.get().getProfileImage()).isEqualTo(member.getProfileImage());
+    }
+
+    @Test
     @DisplayName("email로 Member 존재 여부 확인 테스트")
     void existByEmail() {
         // given

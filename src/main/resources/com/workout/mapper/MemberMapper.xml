@@ -17,6 +17,12 @@
         FROM member
         WHERE id = #{id}
     </select>
+
+    <select id="findByEmail" resultType="Member">
+        SELECT *
+        FROM member
+        WHERE email = #{email}
+    </select>
     
     <select id="existByEmail" resultType="_int">
         SELECT COUNT(*)
