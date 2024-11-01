@@ -18,6 +18,18 @@
         WHERE id = #{id}
     </select>
     
+    <select id="existByEmail" resultType="_int">
+        SELECT COUNT(*)
+        FROM member
+        WHERE email = #{email}
+    </select>
+
+    <select id="existByUsername" resultType="_int">
+        SELECT COUNT(*)
+        FROM member
+        WHERE username = #{username}
+    </select>
+    
     <update id="update">
         UPDATE member
         SET email = #{updateParam.email},
