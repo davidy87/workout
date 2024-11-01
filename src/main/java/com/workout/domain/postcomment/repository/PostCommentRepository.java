@@ -1,37 +1,20 @@
 package com.workout.domain.postcomment.repository;
 
-import com.workout.mapper.PostCommentMapper;
 import com.workout.domain.postcomment.model.PostComment;
 import com.workout.domain.postcomment.model.PostCommentUpdateParam;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
-@Repository
-public class PostCommentRepository {
+public interface PostCommentRepository {
 
-    private final PostCommentMapper postCommentMapper;
+    void save(PostComment postComment);
 
-    public void save(PostComment postComment) {
-        postCommentMapper.save(postComment);
-    }
+    List<PostComment> findAll();
 
-    public List<PostComment> findAll() {
-        return postCommentMapper.findAll();
-    }
+    Optional<PostComment> findById(Long id);
 
-    public Optional<PostComment> findById(Long id) {
-        return postCommentMapper.findById(id);
-    }
+    void update(Long id, PostCommentUpdateParam updateParam);
 
-    public void update(Long id, PostCommentUpdateParam updateParam) {
-        postCommentMapper.update(id, updateParam);
-    }
-
-    public void delete(Long id) {
-        postCommentMapper.delete(id);
-    }
+    void delete(Long id);
 }

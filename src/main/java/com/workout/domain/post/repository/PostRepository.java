@@ -1,41 +1,22 @@
 package com.workout.domain.post.repository;
 
-import com.workout.mapper.PostMapper;
 import com.workout.domain.post.model.Post;
 import com.workout.domain.post.model.PostUpdateParam;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
-@Repository
-public class PostRepository {
+public interface PostRepository {
 
-    private final PostMapper postMapper;
+    void save(Post post);
 
-    public void save(Post post) {
-        postMapper.save(post);
-    }
+    List<Post> findAll();
 
-    public List<Post> findAll() {
-        return postMapper.findAll();
-    }
+    List<Post> findAllByMemberId(Long memberId);
 
-    public List<Post> findAllByMemberId(Long memberId) {
-        return postMapper.findAllByMemberId(memberId);
-    }
+    Optional<Post> findById(Long id);
 
-    public Optional<Post> findById(Long id) {
-        return postMapper.findById(id);
-    }
+    void update(Long id, PostUpdateParam updateParam);
 
-    public void update(Long id, PostUpdateParam updateParam) {
-        postMapper.update(id, updateParam);
-    }
-
-    public void delete(Long id) {
-        postMapper.delete(id);
-    }
+    void delete(Long id);
 }

@@ -1,9 +1,8 @@
-package com.workout.repository;
+package com.workout.domain.answerlike.repository;
 
 import com.workout.domain.answer.model.Answer;
 import com.workout.domain.answer.repository.AnswerRepository;
 import com.workout.domain.answerlike.model.AnswerLike;
-import com.workout.domain.answerlike.repository.AnswerLikeRepository;
 import com.workout.domain.member.model.Member;
 import com.workout.domain.member.repository.MemberRepository;
 import com.workout.domain.question.model.Question;

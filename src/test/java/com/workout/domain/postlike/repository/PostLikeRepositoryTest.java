@@ -1,11 +1,10 @@
-package com.workout.repository;
+package com.workout.domain.postlike.repository;
 
 import com.workout.domain.member.model.Member;
 import com.workout.domain.member.repository.MemberRepository;
 import com.workout.domain.post.model.Post;
 import com.workout.domain.post.repository.PostRepository;
 import com.workout.domain.postlike.model.PostLike;
-import com.workout.domain.postlike.repository.PostLikeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
