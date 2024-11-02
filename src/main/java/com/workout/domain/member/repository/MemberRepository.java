@@ -1,7 +1,6 @@
 package com.workout.domain.member.repository;
 
 import com.workout.domain.member.model.Member;
-import com.workout.domain.member.model.MemberUpdateParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,11 +15,17 @@ public interface MemberRepository {
 
     Optional<Member> findByEmail(String email);
 
+    Optional<Member> findByUsername(String username);
+
     boolean existByEmail(String email);
 
     boolean existByUsername(String username);
 
-    void update(Long id, MemberUpdateParam updateParam);
+    void updateUsername(Long id, String username);
+
+    void updatePassword(Long id, String password);
+
+    void updateProfileImage(Long id, String profileImage);
 
     void delete(Long id);
 }
