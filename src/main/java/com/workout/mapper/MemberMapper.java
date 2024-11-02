@@ -1,7 +1,6 @@
 package com.workout.mapper;
 
 import com.workout.domain.member.model.Member;
-import com.workout.domain.member.model.MemberUpdateParam;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Optional;
@@ -11,9 +10,15 @@ public interface MemberMapper extends CrudMapper<Member> {
 
     Optional<Member> findByEmail(String email);
 
+    Optional<Member> findByUsername(String username);
+
     int existByEmail(String email);
 
     int existByUsername(String username);
 
-    void update(Long id, MemberUpdateParam updateParam);
+    void updateUsername(Long id, String username);
+
+    void updatePassword(Long id, String password);
+
+    void updateProfileImage(Long id, String profileImage);
 }

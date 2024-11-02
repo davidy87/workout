@@ -1,7 +1,6 @@
 package com.workout.domain.member.repository;
 
 import com.workout.domain.member.model.Member;
-import com.workout.domain.member.model.MemberUpdateParam;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,6 +91,30 @@ class MemberRepositoryTest {
     }
 
     @Test
+    @DisplayName("username별 Member 조회 테스트")
+    void findByUsername() {
+        // given
+        Member member = Member.builder()
+                .email("user@gmail.com")
+                .username("user")
+                .password("testpass!")
+                .profileImage("user.png")
+                .build();
+
+        memberRepository.save(member);
+
+        // when
+        Optional<Member> found = memberRepository.findByUsername(member.getUsername());
+
+        // then
+        assertThat(found).isNotEmpty();
+        assertThat(found.get().getEmail()).isEqualTo(member.getEmail());
+        assertThat(found.get().getUsername()).isEqualTo(member.getUsername());
+        assertThat(found.get().getPassword()).isEqualTo(member.getPassword());
+        assertThat(found.get().getProfileImage()).isEqualTo(member.getProfileImage());
+    }
+
+    @Test
     @DisplayName("email로 Member 존재 여부 확인 테스트")
     void existByEmail() {
         // given
@@ -133,8 +156,8 @@ class MemberRepositoryTest {
     }
 
     @Test
-    @DisplayName("Member 수정 테스트")
-    void update() {
+    @DisplayName("Member username 수정 테스트")
+    void updateUsername() {
         // given
         Member member = Member.builder()
                 .email("user@gmail.com")
@@ -146,22 +169,68 @@ class MemberRepositoryTest {
         memberRepository.save(member);
 
         // when
-        MemberUpdateParam updateParam = MemberUpdateParam.builder()
-                .email("newUser@gmail.com")
-                .username("newUser")
-                .password("newpass!")
-                .profileImage("newUser.png")
-                .build();
-
-        memberRepository.update(member.getId(), updateParam);
+        String newUsername = "newUser";
+        memberRepository.updateUsername(member.getId(), newUsername);
 
         // then
         Optional<Member> found = memberRepository.findById(member.getId());
         assertThat(found).isNotEmpty();
-        assertThat(found.get().getEmail()).isEqualTo(updateParam.getEmail());
-        assertThat(found.get().getUsername()).isEqualTo(updateParam.getUsername());
-        assertThat(found.get().getPassword()).isEqualTo(updateParam.getPassword());
-        assertThat(found.get().getProfileImage()).isEqualTo(updateParam.getProfileImage());
+        assertThat(found.get().getEmail()).isEqualTo(member.getEmail());
+        assertThat(found.get().getUsername()).isEqualTo(newUsername);
+        assertThat(found.get().getPassword()).isEqualTo(member.getPassword());
+        assertThat(found.get().getProfileImage()).isEqualTo(member.getProfileImage());
+    }
+
+    @Test
+    @DisplayName("Member password 수정 테스트")
+    void updatePassword() {
+        // given
+        Member member = Member.builder()
+                .email("user@gmail.com")
+                .username("user")
+                .password("testpass!")
+                .profileImage("user.png")
+                .build();
+
+        memberRepository.save(member);
+
+        // when
+        String newPassword = "newTestPass!";
+        memberRepository.updatePassword(member.getId(), newPassword);
+
+        // then
+        Optional<Member> found = memberRepository.findById(member.getId());
+        assertThat(found).isNotEmpty();
+        assertThat(found.get().getEmail()).isEqualTo(member.getEmail());
+        assertThat(found.get().getUsername()).isEqualTo(member.getUsername());
+        assertThat(found.get().getPassword()).isEqualTo(newPassword);
+        assertThat(found.get().getProfileImage()).isEqualTo(member.getProfileImage());
+    }
+
+    @Test
+    @DisplayName("Member profileImage 수정 테스트")
+    void updateProfileImage() {
+        // given
+        Member member = Member.builder()
+                .email("user@gmail.com")
+                .username("user")
+                .password("testpass!")
+                .profileImage("user.png")
+                .build();
+
+        memberRepository.save(member);
+
+        // when
+        String newProfileImage = "newUser.png";
+        memberRepository.updateProfileImage(member.getId(), newProfileImage);
+
+        // then
+        Optional<Member> found = memberRepository.findById(member.getId());
+        assertThat(found).isNotEmpty();
+        assertThat(found.get().getEmail()).isEqualTo(member.getEmail());
+        assertThat(found.get().getUsername()).isEqualTo(member.getUsername());
+        assertThat(found.get().getPassword()).isEqualTo(member.getPassword());
+        assertThat(found.get().getProfileImage()).isEqualTo(newProfileImage);
     }
 
     @Test

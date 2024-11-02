@@ -23,6 +23,12 @@
         FROM member
         WHERE email = #{email}
     </select>
+
+    <select id="findByUsername" resultType="Member">
+        SELECT *
+        FROM member
+        WHERE username = #{username}
+    </select>
     
     <select id="existByEmail" resultType="_int">
         SELECT COUNT(*)
@@ -35,13 +41,22 @@
         FROM member
         WHERE username = #{username}
     </select>
-    
-    <update id="update">
+
+    <update id="updateUsername">
         UPDATE member
-        SET email = #{updateParam.email},
-            username = #{updateParam.username},
-            password = #{updateParam.password},
-            profile_image = #{updateParam.profileImage}
+        SET username = #{username}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updatePassword">
+        UPDATE member
+        SET password = #{password}
+        WHERE id = #{id}
+    </update>
+
+    <update id="updateProfileImage">
+        UPDATE member
+        SET profile_image = #{profileImage}
         WHERE id = #{id}
     </update>
 

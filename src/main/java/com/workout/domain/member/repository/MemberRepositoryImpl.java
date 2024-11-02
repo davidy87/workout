@@ -2,7 +2,6 @@ package com.workout.domain.member.repository;
 
 import com.workout.mapper.MemberMapper;
 import com.workout.domain.member.model.Member;
-import com.workout.domain.member.model.MemberUpdateParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -36,6 +35,11 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
     @Override
+    public Optional<Member> findByUsername(String username) {
+        return memberMapper.findByUsername(username);
+    }
+
+    @Override
     public boolean existByEmail(String email) {
         return memberMapper.existByEmail(email) != 0;
     }
@@ -46,8 +50,18 @@ public class MemberRepositoryImpl implements MemberRepository {
     }
 
     @Override
-    public void update(Long id, MemberUpdateParam updateParam) {
-        memberMapper.update(id, updateParam);
+    public void updateUsername(Long id, String username) {
+        memberMapper.updateUsername(id, username);
+    }
+
+    @Override
+    public void updatePassword(Long id, String password) {
+        memberMapper.updatePassword(id, password);
+    }
+
+    @Override
+    public void updateProfileImage(Long id, String profileImage) {
+        memberMapper.updateProfileImage(id, profileImage);
     }
 
     @Override
